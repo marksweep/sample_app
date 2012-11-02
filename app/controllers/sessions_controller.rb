@@ -1,8 +1,6 @@
 class SessionsController < ApplicationController
 
-	protect_from_forgery
-	include SessionsHelper
-	
+
 	def new
 	end
 
@@ -21,5 +19,7 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
+		sign_out
+		redirect_to root_url
 	end
 end
